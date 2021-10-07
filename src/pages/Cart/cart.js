@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import useStyles from './styles';
 import CartItem from './cartItem/CartItem';
@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
     const classes = useStyles();
+    const [checkout, setCheckout] = useState(false);
     const EmptyCart = () => (
         <Typography variant='subtitle1'>
             <Link to='/shop' className={classes.link}>Add some items to your cart!</Link>
-            </Typography>
+        </Typography>
     );
     const FilledCart = () => (
         <>
@@ -25,8 +26,13 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
                     Subtotal: {cart.subtotal.formatted_with_symbol}
                 </Typography>
                 <div>
+                    {/* {checkout ? (
+                        // <Paypal />
+                    ) : ( */}
+
+                        <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary' onClick={() => { setCheckout(true) }}>Checkout</Button>
+                    
                     <Button className={classes.emptyButton} size='large' type='button' variant='contained' color='secondary' onClick={handleEmptyCart}>Empty Cart</Button>
-                    <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary'>Checkout</Button>
 
                 </div>
             </div>
