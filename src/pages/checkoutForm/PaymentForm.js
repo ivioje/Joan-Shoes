@@ -9,7 +9,6 @@ const PaymentForm = ({ cart,checkoutToken, backStep }) => {
         <>
         <Review checkoutToken={checkoutToken} />
         <Divider />
-        <Typography variant='h6' gutterBottom style={{ margin: '20px 0', fontWeight: '600' }} >Payment Method</Typography>
         <FlutterPayment checkoutToken={checkoutToken} cart={cart} />
         </>
     )

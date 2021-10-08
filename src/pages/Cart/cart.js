@@ -3,6 +3,7 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 import useStyles from './styles';
 import CartItem from './cartItem/CartItem';
 import { Link } from 'react-router-dom';
+import FlutterPayment from '../checkoutForm/checkout/FlutterPayment';
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
     const classes = useStyles();

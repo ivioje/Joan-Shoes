@@ -14,6 +14,7 @@ const AddressForm = ({ checkoutToken, next }) => {
     const [shippingOption, setShippingOption] = useState('');
     const methods = useForm();
 
+
     const countries = (shippingCountries.NG);
     const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name }));
     // const options = Object.entries(shippingOptions).map(([so]) => ({ id: so.id, label: `${so.description} - (${so.price.formatted_with_symbol})`}));
@@ -62,7 +63,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <FormInput name='firstName' label='First name' />
                         <FormInput name='lastName' label='Last name' />
                         <FormInput name='address1' label='Address' />
-                        <FormInput name='email' label='Email' />
+                        <FormInput name='email' label='Email' id='email' />
                         <FormInput name='city' label='City' />
                         <FormInput name='ZIP' label='ZIP / Postal code' />
                         <Grid item xs={12} sm={6}>

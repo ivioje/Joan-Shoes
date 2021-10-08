@@ -1,44 +1,48 @@
 import React from 'react';
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import { Button, Typography } from '@material-ui/core';
 
-export default function FlutterPayment( { checkoutToken, cart }) {
-    const amt = checkoutToken.live.subtotal.formatted_with_symbol;
+export default function FlutterPayment({ checkoutToken, cart }) {
+
+  const amt = cart.subtotal.raw;
+
   const config = {
     public_key: 'FLWPUBK_TEST-2a467708d5320a9489cf1bf4daa564ac-X',
     tx_ref: Date.now(),
-    amount: '',
+    amount: amt + 1000,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
-      email: 'user@gmail.com',
-      phonenumber: '07064586146',
-      name: 'joel ugwumadu',
+      email: 'xxxx@xxxx.com',
     },
     customizations: {
-      title: 'my Payment Title',
+      title: 'Joan Shoes',
       description: 'Payment for items in cart',
-    //   logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
     },
   };
 
   const handleFlutterPayment = useFlutterwave(config);
 
   return (
-    <div className="App">
-
-      <button
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexFlow: 'column wrap' }}>
+      <Typography variant='h6' gutterBottom style={{ margin: '20px 0', fontWeight: '600' }} >Payment Method</Typography>
+      <Button
         onClick={() => {
           handleFlutterPayment({
             callback: (response) => {
-               console.log(response);
-                closePaymentModal() // this will close the modal programmatically
+              // console.log(response);
+              closePaymentModal() // this will close the modal programmatically
             },
-            onClose: () => {},
+            onClose: () => { },
           });
         }}
+        color='primary'
+        variant='contained'
+        justifycontent='center'
       >
         Pay Now
-      </button>
+      </Button>
     </div>
   );
 }
