@@ -10,8 +10,8 @@ const AddressForm = ({ checkoutToken, next }) => {
     const [shippingCountry, setShippingCountry] = useState('');
     const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
     const [shippingSubdivision, setShippingSubdivision] = useState('');
-    const [shippingOptions, setShippingOptions] = useState([]);
-    const [shippingOption, setShippingOption] = useState('');
+    // const [shippingOptions, setShippingOptions] = useState([]);
+    // const [shippingOption, setShippingOption] = useState('');
     const methods = useForm();
 
 
@@ -34,31 +34,31 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     }
 
-    const fetchShippingOptions = async (checkoutTokenId, country, region = null) => {
-        const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region });
+    // const fetchShippingOptions = async (checkoutTokenId, country, region = null) => {
+    //     const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region });
 
-        setShippingOptions(options);
-        setShippingOptions(options[0].id)
-    }
+    //     setShippingOptions(options);
+    //     setShippingOptions(options[0].id)
+    // }
 
     useEffect(() => {
         fetchShippingCountries(checkoutToken.id);
-    }, []);
+    });
 
     useEffect(() => {
         if (shippingCountry) fetchSubdivisions(shippingCountry);
     }, [shippingCountry]);
 
-    useEffect(() => {
-        if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
-    }, [shippingSubdivision]);
+    // useEffect(() => {
+    //     if (shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
+    // }, [shippingSubdivision]);
 
 
     return (
         <div>
             <Typography variant='h6' gutterBottom >Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
+                <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision }))}>
                     <Grid container spacing={3}>
                         <FormInput name='firstName' label='First name' />
                         <FormInput name='lastName' label='Last name' />
