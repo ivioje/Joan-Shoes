@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cart from './pages/Cart/cart.js';
 import Products from './components/products/products.js';
 import Checkout from './pages/checkoutForm/checkout/Checkout.js';
+import Home from './pages/home/Home.js';
+import NavMenu from './components/navbar/Navbar.js';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -54,9 +56,9 @@ const App = () => {
         <>
             {/* <Products /> */}
             <Router>
-                <Navbar totalItems={cart.total_items} />
+                <NavMenu totalItems={cart.total_items} />
                 <Switch>
-                    <Route exact path='/' />
+                    <Route exact path='/' component={Home} />
                     <Route exact path='/shop' >
                         <Products products={products} onAddToCart={handleAddToCart} />
                     </Route>

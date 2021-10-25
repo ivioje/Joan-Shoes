@@ -7,7 +7,7 @@ export default function FlutterPayment({ checkoutToken, cart }) {
   const amt = cart.subtotal.raw;
 
   const config = {
-    public_key: process.env.REACT_APP_PUBLIC_KEY,
+    public_key: 'FLWPUBK_TEST-2a467708d5320a9489cf1bf4daa564ac-X',
     tx_ref: Date.now(),
     amount: amt + 1000,
     currency: 'NGN',

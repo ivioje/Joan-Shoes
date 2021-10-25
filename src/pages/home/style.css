@@ -1,0 +1,14 @@
+.quote_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 300px;
+}
+.quote {
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    font-size: 30px;
+
+}
