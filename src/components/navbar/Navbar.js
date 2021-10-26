@@ -1,10 +1,7 @@
 import React from 'react';
 import { ShoppingCart } from '@material-ui/icons';
-import { Badge } from '@material-ui/core';
 import './styles.css'
 import { Facebook, Twitter, Instagram } from '@material-ui/icons';
-
-import logo from '../../assets/logo.jpg';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const NavMenu = ({ totalItems }) => {
@@ -12,7 +9,7 @@ const NavMenu = ({ totalItems }) => {
   return (
     <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark" className='navbar_main'>
     <Container>
-    <Navbar.Brand href="/" title='Home'>Joan Shoes</Navbar.Brand>
+    <Navbar.Brand href="/" title='Home' className='brand'>Joan Shoes👟</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" className='burger'/>
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
@@ -38,8 +35,3 @@ const NavMenu = ({ totalItems }) => {
 }
 
 export default NavMenu;
-
-     
-{/* <Badge badgeContent={totalItems} color="secondary">
-<ShoppingCart />
-</Badge> */}

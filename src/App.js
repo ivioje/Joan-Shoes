@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/navbar/Navbar.js';
 import { commerce } from './lib/commerce';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Cart from './pages/Cart/cart.js';

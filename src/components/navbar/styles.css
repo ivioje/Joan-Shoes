@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
 .cart {
   display: flex !important;
   width: 100% !important;
@@ -18,4 +18,8 @@
 .burger {
   border: none !important;
   outline: none !important;
+}
+.brand {
+  font-family: 'Princess Sofia', cursive;
+  font-size: 23px !important;
 }

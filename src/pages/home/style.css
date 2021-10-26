@@ -4,11 +4,22 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 300px;
+    height: 320px;
 }
 .quote {
     font-weight: 300 !important;
     text-transform: uppercase;
     font-size: 30px;
-
 }
+.link a{
+text-decoration: none;
+color: inherit;
+}
+.link a:hover {
+    color: inherit;
+}
+.link {
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+}
+
