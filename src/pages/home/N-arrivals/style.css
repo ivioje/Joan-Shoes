@@ -1,0 +1,27 @@
+.arrivals {
+    text-align: center;
+    padding: 10rem 0rem 10rem 0rem;
+}
+.arrivals >* {
+    padding: .8rem 0rem;
+}
+.arrivals h6{
+    opacity: .7;
+}
+.arrivals h3 {
+    font-weight: 500 !important;
+    text-transform: capitalize;
+    color: black;
+}
+.link-shop a{
+    text-decoration: none !important;
+    color: inherit;
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+}
+.link-shop a:hover{
+    color: inherit;
+}
+.image-media {
+    height: 300px;
+}

@@ -53,7 +53,12 @@ padding: .5rem;
     background: transparent;
     outline: none;
     border: 1px solid #fff;
-    padding: .8rem;
+    padding: 1rem 2.5rem;
     text-align: center;
-    width: 12%;
+}
+@media screen and (max-width: 600px) {
+    .details button {
+width: auto;
+padding: .6rem 1rem;
+    }
 }

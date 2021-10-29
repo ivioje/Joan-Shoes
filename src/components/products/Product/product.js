@@ -23,11 +23,12 @@ const Product = ( { product, onAddToCart } ) => {
                 <Typography dangerouslySetInnerHTML={{ __html:product.description}} />
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
-                <AddShoppingCart onClick={() => onAddToCart(product.id, 1)}/>
+                <AddShoppingCart style={{cursor: 'pointer'}} onClick={() => onAddToCart(product.id, 1)}/>
                 {/* <h6 aria-label="Add to cart" onClick={() => onAddToCart(product.id, 1)}>
                 Add to cart
                 </h6> */}
             </CardActions>
+
         </Card>
         </div>
      );

@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
-import Carousel from './carousel/Carousel.js'
+import Carousel from './carousel/Carousel.js';
+import Categories from './categories/Categories';
+import Arrivals from './N-arrivals/Arrivals';
 
 const Home = () => {
     return (
@@ -11,10 +13,8 @@ const Home = () => {
                 <p className='link'> <a href='/about'>Find out more
                     &#10142;</a></p>
             </div>
-            <div className='categories'>
-                <h1>Categories</h1>
-
-            </div>
+            <Categories />
+            <Arrivals />
         </>
     )
 }

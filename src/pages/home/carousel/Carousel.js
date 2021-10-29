@@ -8,7 +8,7 @@ const Carousel = () => {
                 <div className="outer">
                     <div className="details">
                         <h1>Find your perfect size and choice</h1>
-                        <h5>A range of products for you</h5>
+                        <h5>A range of shoe products for you</h5>
                         <button>Shop now</button>
                     </div>
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Princess+Sofia&display=swap');
+
 .quote_content {
     display: flex;
     align-items: center;
@@ -22,4 +24,3 @@ color: inherit;
     border-bottom: 1px solid;
     padding-bottom: 1rem;
 }
-
