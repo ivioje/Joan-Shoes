@@ -58,7 +58,7 @@ padding: .5rem;
 }
 @media screen and (max-width: 600px) {
     .details button {
-width: auto;
+width: 100%;
 padding: .6rem 1rem;
     }
 }
