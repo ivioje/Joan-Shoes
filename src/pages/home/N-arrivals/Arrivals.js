@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './style.css';
 import { commerce } from '../../../lib/commerce.js';
-import { Grid, Card, CardMedia, CardContent, Typography, CardActions } from '@material-ui/core';
+import { Grid, Card, CardContent, Typography, CardActions } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
 const Arrivals = () => {
@@ -19,6 +19,7 @@ const Arrivals = () => {
 
         setCart(item.cart);
     };
+    console.log(cart);
 
     useEffect(() => {
         fetchProducts();
@@ -44,7 +45,7 @@ const Arrivals = () => {
         return ( 
             <div>
     <Card className='' style={{border: 'none !important', maxWidth: '100%'}}>
-            <img src={product.image.url} className='image-media' title={product.name} />
+            <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
                 <CardContent>
                     <div className=''>
                         <Typography variant='h5' gutterBottom>
