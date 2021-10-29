@@ -61,4 +61,10 @@ padding: .5rem;
 width: 100%;
 padding: .6rem 1rem;
     }
+    .carousel_container{
+        height: 100%;
+    }
+    .outer{
+        height: 100%;
+    }
 }
