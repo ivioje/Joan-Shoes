@@ -3,6 +3,8 @@ import './style.css';
 import Carousel from './carousel/Carousel.js';
 import Categories from './categories/Categories';
 import Arrivals from './N-arrivals/Arrivals';
+import Xplore from './xplore/Xplore';
+import Social from './social/Social';
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
             </div>
             <Categories />
             <Arrivals />
+            <Xplore />
+            <Social />
         </>
     )
 }

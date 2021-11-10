@@ -1,6 +1,6 @@
 .arrivals {
     text-align: center;
-    padding: 10rem 0rem 10rem 0rem;
+    padding: 6rem 0rem 6rem 0rem;
 }
 .arrivals >* {
     padding: .8rem 0rem;
@@ -23,5 +23,29 @@
     color: inherit;
 }
 .image-media {
+    width: 100%;
     height: 300px;
+}
+.name {
+font-size: 15px;
+text-align: left;
+font-weight: 600;
+margin: 1.2rem 0rem;
+}
+.desc {
+    opacity: .85;
+    font-weight: 400;
+}
+.price {
+    font-weight: 600;
+}
+.to-cart{
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(4, 34, 4);
+}
+
+.card {
+    text-align: left;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './style.css';
 import { commerce } from '../../../lib/commerce.js';
-import { Grid, Card, CardContent, Typography, CardActions } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 
 const Arrivals = () => {
@@ -42,28 +42,24 @@ const Arrivals = () => {
     }
 
     const Product = ({ product }) => {
-        return ( 
-            <div>
-    <Card className='' style={{border: 'none !important', maxWidth: '100%'}}>
-            <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
-                <CardContent>
+        return (
+            <div className='card' style={{ maxWidth: '100%', padding: '0rem .5rem', border: 'none' }}>
+                <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
+                <div>
                     <div className=''>
-                        <Typography variant='h5' gutterBottom>
-                        {product.name}
-                        </Typography>
-                    <Typography variant='h5'>
-                    {product.price.formatted_with_symbol}
-                    </Typography>
+                        <h5 className='name'>
+                            {product.name.toUpperCase()}
+                        </h5>
+                        <div className='desc' dangerouslySetInnerHTML={{ __html: product.description }} />
+                        <p className='price'>
+                            {product.price.formatted_with_symbol}
+                        </p>
                     </div>
-                    <Typography dangerouslySetInnerHTML={{ __html:product.description}} />
-                </CardContent>
-                <CardActions disableSpacing className=''>
-                <AddShoppingCart style={{cursor: 'pointer'}} onClick={() => handleAddToCart(product.id, 1)}/>
-                </CardActions>
-    
-            </Card>
+                </div>
+                <div className='to-cart' onClick={() => handleAddToCart(product.id, 1)}>Add to cart <AddShoppingCart /></div>
+
             </div>
-         );
+        );
     }
 
     return (
@@ -74,7 +70,7 @@ const Arrivals = () => {
             </h3>
             <p className='link-shop'> <a href='/shop'>See more products
                 &#10142;</a></p>
-<Products />
+            <Products />
         </div>
     )
 }

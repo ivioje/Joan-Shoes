@@ -6,7 +6,7 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 320px;
+    padding: 6rem 0rem;
 }
 .quote {
     font-weight: 300 !important;
@@ -23,4 +23,13 @@ color: inherit;
 .link {
     border-bottom: 1px solid;
     padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .quote_content {
+        height: 100%;
+    }
+    .quote {
+        font-size: 25px;
+    }
 }
