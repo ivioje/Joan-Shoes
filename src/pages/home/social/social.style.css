@@ -40,8 +40,8 @@
     .column {
       flex: 100%;
       max-width: 100%;
-      flex: 25%;
-      max-width: 25%;
+      flex: 30%;
+      max-width: 30%;
     }
     .row {
         padding:0rem .5rem;
