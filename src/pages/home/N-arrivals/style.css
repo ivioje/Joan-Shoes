@@ -33,8 +33,9 @@ font-weight: 600;
 margin: 1.2rem 0rem;
 }
 .desc {
-    opacity: .85;
-    font-weight: 400;
+    opacity: .7;
+    font-weight: 300;
+    font-size: 13.5px;
 }
 .price {
     font-weight: 600;
@@ -44,8 +45,12 @@ margin: 1.2rem 0rem;
     font-size: 12px;
     font-weight: 600;
     color: rgb(4, 34, 4);
+    padding-bottom: 15px;
 }
 
 .card {
     text-align: left;
+}
+.productCard {
+    border-bottom: 1px solid rgb(15, 15, 15);
 }

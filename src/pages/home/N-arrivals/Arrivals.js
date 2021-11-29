@@ -44,6 +44,7 @@ const Arrivals = () => {
     const Product = ({ product }) => {
         return (
             <div className='card' style={{ maxWidth: '100%', padding: '0rem .5rem', border: 'none' }}>
+                <div className='productCard'>
                 <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
                 <div>
                     <div className=''>
@@ -56,8 +57,8 @@ const Arrivals = () => {
                         </p>
                     </div>
                 </div>
-                <div className='to-cart' onClick={() => handleAddToCart(product.id, 1)}>Add to cart <AddShoppingCart /></div>
-
+                <div className='to-cart' onClick={() => handleAddToCart(product.id, 1)}>Add to cart</div>   
+                </div>
             </div>
         );
     }
