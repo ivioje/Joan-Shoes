@@ -1,6 +1,6 @@
 .arrivals {
     text-align: center;
-    padding: 6rem 0rem 6rem 0rem;
+    padding: 6rem 1rem 6rem 1rem;
 }
 .arrivals >* {
     padding: .8rem 0rem;
@@ -44,7 +44,8 @@ margin: 1.2rem 0rem;
     cursor: pointer;
     font-size: 12px;
     font-weight: 600;
-    color: rgb(4, 34, 4);
+    color: rgb(12, 12, 12);
+    opacity: .7;
     padding-bottom: 15px;
 }
 
@@ -53,4 +54,32 @@ margin: 1.2rem 0rem;
 }
 .productCard {
     border-bottom: 1px solid rgb(15, 15, 15);
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.price {
+    opacity: 1 !important;
+    color: rgb(12, 12, 12);
+}
+
+@media screen and (max-width: 500px) {
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.productCard{
+    width: 50%;
+}
+}
+@media screen and (max-width: 498px) {
+.productCard {
+    width: 100%;
+    padding: 1rem;
+}
 }

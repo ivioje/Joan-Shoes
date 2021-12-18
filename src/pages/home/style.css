@@ -9,7 +9,7 @@
     padding: 6rem 0rem;
 }
 .quote {
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     text-transform: uppercase;
     font-size: 30px;
 }
@@ -28,6 +28,7 @@ color: inherit;
 @media screen and (max-width: 768px) {
     .quote_content {
         height: 100%;
+        padding: 6rem 3rem;
     }
     .quote {
         font-size: 25px;

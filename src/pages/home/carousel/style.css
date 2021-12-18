@@ -5,6 +5,7 @@
     height: 80vh;
     animation: animate 20s ease infinite;
     background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 @keyframes animate{

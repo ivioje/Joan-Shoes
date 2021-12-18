@@ -6,6 +6,7 @@ import Products from './components/products/products.js';
 import Checkout from './pages/checkoutForm/checkout/Checkout.js';
 import Home from './pages/home/Home.js';
 import NavMenu from './components/navbar/Navbar.js';
+import Footer from './components/footer/Footer';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -73,6 +74,7 @@ const App = () => {
                         <Checkout cart={cart} />
                     </Route>
                 </Switch>
+                <Footer />
             </Router>
         </>
     );

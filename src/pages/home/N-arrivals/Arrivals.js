@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './style.css';
 import { commerce } from '../../../lib/commerce.js';
 import { Grid } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
+import { Skeleton } from '@mui/material';
 
-const Arrivals = () => {
+const Arrivals = (props) => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState({});
 
@@ -24,6 +24,8 @@ const Arrivals = () => {
     useEffect(() => {
         fetchProducts();
     }, []);
+
+    const { loading = false } = props;
 
     const Products = () => {
         return (
@@ -45,19 +47,19 @@ const Arrivals = () => {
         return (
             <div className='card' style={{ maxWidth: '100%', padding: '0rem .5rem', border: 'none' }}>
                 <div className='productCard'>
-                <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
-                <div>
-                    <div className=''>
-                        <h5 className='name'>
-                            {product.name.toUpperCase()}
-                        </h5>
-                        <div className='desc' dangerouslySetInnerHTML={{ __html: product.description }} />
-                        <p className='price'>
-                            {product.price.formatted_with_symbol}
-                        </p>
+                    <img alt={product.name} src={product.image.url} className='image-media' title={product.name} />
+                    <div>
+                        <div className=''>
+                            <h5 className='name'>
+                                {product.name.toUpperCase()}
+                            </h5>
+                            <div className='desc' dangerouslySetInnerHTML={{ __html: product.description }} />
+                            <div className='footer'>
+                                <h6 className='price'> {product.price.formatted_with_symbol} </h6>
+                                <p className='to-cart' onClick={() => handleAddToCart(product.id, 1)}>Add to cart</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className='to-cart' onClick={() => handleAddToCart(product.id, 1)}>Add to cart</div>   
                 </div>
             </div>
         );
@@ -71,7 +73,10 @@ const Arrivals = () => {
             </h3>
             <p className='link-shop'> <a href='/shop'>See more products
                 &#10142;</a></p>
-            <Products />
+                {
+                    loading ?
+                    <Skeleton variant="rectangular" width={210} height={118} /> : <Products />
+                }
         </div>
     )
 }
