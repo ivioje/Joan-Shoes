@@ -55,6 +55,11 @@
       justify-content: space-evenly;
     }
   }
+  @media screen and (max-width: 500px) {
+    footer {
+  padding-top: 1rem;
+    }
+  }
   .ft-main-item {
     padding: 1.25rem;
     min-width: 12.5rem;

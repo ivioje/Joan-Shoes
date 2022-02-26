@@ -1,37 +1,30 @@
 import React from 'react';
-import {Card, CardMedia, CardContent, CardActions, Typography} from '@material-ui/core';
+import { Card, CardMedia, CardContent, CardActions, Typography } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
 import { mergeClasses } from '@material-ui/styles';
 import useStyles from './styles';
+import './product.styles.css';
 
-const Product = ( { product, onAddToCart } ) => {
-    const classes = useStyles();
-    
-    return ( 
-        <div>
-<Card className={mergeClasses.root}>
-        <CardMedia className={classes.media} image={product.image.url} title={product.name}  />
-            <CardContent>
-                <div className={classes.cardContent}>
-                    <Typography variant='h5' gutterBottom>
-                    {product.name}
-                    </Typography>
-                <Typography variant='h5'>
-                {product.price.formatted_with_symbol}
-                </Typography>
+const Product = ({ product, onAddToCart }) => {
+    return (
+
+        <div className="product-card">
+            <div className="product-tumb">
+                <img src={product.image.url} alt={product.name} />
+            </div>
+            <div className="product-details">
+                {product.categories.map((category, id) => <span className='product-category' key={category.id}>{category.name}</span>)}
+                <h4><a href="/shop"> {product.name}</a></h4>
+                <p dangerouslySetInnerHTML={{ __html: product.description }} />
+                <div className="product-bottom-details">
+                    <div className="product-price">{product.price.formatted_with_symbol}</div>
+                    <div className="product-links">
+                        <AddShoppingCart title='Add to cart' style={{ cursor: 'pointer' }} onClick={() => onAddToCart(product.id, 1)} />
+                    </div>
                 </div>
-                <Typography dangerouslySetInnerHTML={{ __html:product.description}} />
-            </CardContent>
-            <CardActions disableSpacing className={classes.CardActions}>
-                <AddShoppingCart style={{cursor: 'pointer'}} onClick={() => onAddToCart(product.id, 1)}/>
-                {/* <h6 aria-label="Add to cart" onClick={() => onAddToCart(product.id, 1)}>
-                Add to cart
-                </h6> */}
-            </CardActions>
-
-        </Card>
+            </div>
         </div>
-     );
+    );
 }
- 
+
 export default Product;

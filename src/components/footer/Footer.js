@@ -8,29 +8,29 @@ const Footer = () => {
             <Social />
 
             <footer>
-                <section class="ft-main">
-                    <div class="ft-main-item">
-                        <h2 class="ft-title">Joan Shoes</h2>
+                <section className="ft-main">
+                    <div className="ft-main-item">
+                        <h2 className="ft-title">Joan Shoes</h2>
                         <p>A one-stop unisex shopping <br /> website.</p>
                     </div>
-                    <div class="ft-main-item">
-                        <h2 class="ft-title">Links</h2>
+                    <div className="ft-main-item">
+                        <h2 className="ft-title">Links</h2>
                         <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Shop</a></li>
-                            <li><a href="#">Bulk Order</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/shop">Shop</a></li>
+                            <li><a href="/bulk-order">Bulk Order</a></li>
                         </ul>
                     </div>
-                    <div class="ft-main-item">
-                        <h2 class="ft-title">Follow Us</h2>
+                    <div className="ft-main-item">
+                        <h2 className="ft-title">Follow Us</h2>
                         <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
+                            <li><a href="/fb">Facebook</a></li>
+                            <li><a href="/twi">Twitter</a></li>
+                            <li><a href="/ig">Instagram</a></li>
                         </ul>
                     </div>
-                    <div class="ft-main-item">
-                        <h2 class="ft-title">Stay Updated</h2>
+                    <div className="ft-main-item">
+                        <h2 className="ft-title">Stay Updated</h2>
                         <p>Get early updates on new arrivals!</p>
                         <form>
                             <input type="email" name="email" placeholder="Enter email address" />
@@ -39,8 +39,8 @@ const Footer = () => {
                     </div>
                 </section>
 
-                <section class="ft-legal">
-                    <ul class="ft-legal-list">
+                <section className="ft-legal">
+                    <ul className="ft-legal-list">
                         <li>&copy; 2021 Joan Shoes</li>
                     </ul>
                 </section>
