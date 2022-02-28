@@ -11,14 +11,14 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
 
     return (
 
-        <Card sx={{ maxWidth: 345 }} style={{'maxHeight': '400px'}}>
-            <div style={{'height': '210px'}}>
-            <CardMedia
-                component="img"
-                image={item.image.url}
-                alt={item.name}
-                style={{'maxWidth': '100% !important', 'height': '100%'}}
-            />
+        <Card sx={{ maxWidth: 345 }} style={{ 'maxHeight': '400px' }}>
+            <div style={{ 'height': '210px' }}>
+                <CardMedia
+                    component="img"
+                    image={item.image.url}
+                    alt={item.name}
+                    style={{ 'maxWidth': '100% !important', 'height': '100%' }}
+                />
             </div>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -31,7 +31,7 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
                 <button className='updateBtn' onClick={() => onUpdateCartQty(item.id, item.quantity + 1)}>+</button>
                 <Delete onClick={() => onRemoveFromCart(item.id)} className='delete-item' />
             </CardActions>
-                <h6 style={{'float': 'right'}}>{item.price.formatted_with_symbol}</h6>
+            <h6 style={{ 'float': 'right' }}>{item.price.formatted_with_symbol}</h6>
 
         </Card>
 
