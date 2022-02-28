@@ -28,9 +28,6 @@ console.log(checkout);
                     Subtotal: {cart.subtotal.formatted_with_symbol}
                 </Typography>
                 <div>
-                    {/* {checkout ? (
-                        // <Paypal />
-                    ) : ( */}
 
                         <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary' onClick={() => { setCheckout(true) }}>Checkout</Button>
                     
