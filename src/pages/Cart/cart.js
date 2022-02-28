@@ -3,15 +3,16 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 import useStyles from './styles';
 import CartItem from './cartItem/CartItem';
 import { Link } from 'react-router-dom';
+import './cart.styles.css'
 
-const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
+const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, totalItems }) => {
     const classes = useStyles();
     const [checkout, setCheckout] = useState(false);
-console.log(checkout);
+    console.log(checkout);
 
     const EmptyCart = () => (
-        <Typography variant='subtitle1'>
-            <Link to='/shop' className={classes.link}>Add some items to your cart!</Link>
+        <Typography variant='subtitle1' style={{'textAlign': 'center'}}>
+            <Link to='/shop' className={classes.link}>Click here to add some items to your cart!</Link>
         </Typography>
     );
     const FilledCart = () => (
@@ -23,7 +24,14 @@ console.log(checkout);
                     </Grid>
                 ))}
             </Grid>
-            <div className={classes.carddetails}>
+            <div className="cart-summary">
+                <h4>Subtotal: {cart.subtotal.formatted_with_symbol}</h4>
+                <div className="cart-btn">
+                    <Button component={Link} to='/checkout' className='checkout-btn' size='large' type='button' variant='contained' color='primary' onClick={() => { setCheckout(true) }}>Checkout</Button>
+                    <Button className='empty-btn' onClick={handleEmptyCart}>Empty Cart</Button>
+                </div>
+            </div>
+            {/* <div className={classes.carddetails}>
                 <Typography variant='h4'>
                     Subtotal: {cart.subtotal.formatted_with_symbol}
                 </Typography>
@@ -34,7 +42,7 @@ console.log(checkout);
                     <Button className={classes.emptyButton} size='large' type='button' variant='contained' color='secondary' onClick={handleEmptyCart}>Empty Cart</Button>
 
                 </div>
-            </div>
+            </div> */}
         </>
     );
     if (!cart.line_items) return 'Loading...';
@@ -42,7 +50,7 @@ console.log(checkout);
     return (
         <Container>
             <div className={classes.toolbar} />
-            <Typography className={classes.title} variant='h3' gutterBottom>Your Shopping Cart</Typography>
+            <Typography className={classes.title} variant='h5' gutterBottom style={{'textAlign': 'center'}}>You have <span style={{'fontSize':'14px'}}>{totalItems} item(s)</span> in your cart</Typography>
             {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
         </Container>
     );

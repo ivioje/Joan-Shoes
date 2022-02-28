@@ -76,12 +76,20 @@ a
     font-size: 18px;
     color: #530606;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem;
 }
 
 .product-links {
     text-align: right;
     color: rgb(32, 32, 32);
-
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .product-links a {
@@ -94,4 +102,37 @@ a
 
 .product-links a:hover {
     color: #fbb72c;
+}
+.updateBtn {
+    background: transparent;
+    border: none;
+    width: 15px;
+    height: auto;
+    padding: 0rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eee;
+    margin: 5px;
+}
+.updateBtn button:hover {
+    background: rgb(204, 204, 204);
+}
+.qty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete-item {
+    margin: 5px;
+    cursor: pointer;
+}
+.delete-item:hover{
+    color: red;
+}
+@media screen and (max-width: 800px) {
+    .product-card{
+        margin: 5px auto !important;
+    }
 }

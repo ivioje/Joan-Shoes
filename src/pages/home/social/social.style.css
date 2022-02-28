@@ -4,6 +4,8 @@
 }
 .content h3 {
     font-weight: 400;
+    border-top: 1px solid rgb(231, 231, 231);
+    padding-top: 3rem;
 }
 
 .box {

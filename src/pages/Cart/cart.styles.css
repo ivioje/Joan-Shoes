@@ -1,0 +1,30 @@
+.empty-btn, .checkout-btn{
+    width: 10rem !important;
+    padding: .5rem !important;
+    height: auto 0 !important;
+    background: rgb(219, 21, 21) !important;
+    color: #fff !important;
+    margin: 5px !important;
+    border: 1px solid rgb(219, 21, 21)!important;
+    border-radius: 5px !important;
+}
+.checkout-btn {
+    background: rgb(17, 71, 141) !important;
+    border: 1px solid rgb(17, 71, 141)!important;
+
+}
+.cart-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap;
+}
+.cart-summary {
+    text-align: center;
+    padding: 3rem;
+}
+.cart-summary h4 {
+    color: black;
+    font-weight: 700;
+    font-size: 35px;
+}

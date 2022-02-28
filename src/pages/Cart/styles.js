@@ -2,8 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
+  toolbar: {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  },
   title: {
-    marginTop: '5%',
+    textTransform: 'uppercase',
+    fontWeight: '700',
+    padding: '3%'
   },
   emptyButton: {
     minWidth: '150px',
@@ -19,6 +26,9 @@ export default makeStyles((theme) => ({
   },
   link: {
     textDecoration: 'none',
+    color: '#000',
+    fontSize: '17px',
+    fontWeight: '600',
   },
   cardDetails: {
     display: 'flex',

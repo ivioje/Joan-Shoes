@@ -68,6 +68,7 @@ const App = () => {
                             handleUpdateCartQty={handleUpdateCartQty}
                             handleRemoveFromCart={handleRemoveFromCart}
                             handleEmptyCart={handleEmptyCart}
+                            totalItems={cart.total_items}
                         />
                     </Route>
                     <Route exact path='/checkout' >
