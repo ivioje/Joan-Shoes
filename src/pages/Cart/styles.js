@@ -2,11 +2,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
-  toolbar: {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  },
   title: {
     textTransform: 'uppercase',
     fontWeight: '700',

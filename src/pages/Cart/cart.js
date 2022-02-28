@@ -11,7 +11,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     console.log(checkout);
 
     const EmptyCart = () => (
-        <Typography variant='subtitle1' style={{'textAlign': 'center'}}>
+        <Typography variant='subtitle1' style={{ 'textAlign': 'center' }}>
             <Link to='/shop' className={classes.link}>Click here to add some items to your cart!</Link>
         </Typography>
     );
@@ -31,26 +31,14 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
                     <Button className='empty-btn' onClick={handleEmptyCart}>Empty Cart</Button>
                 </div>
             </div>
-            {/* <div className={classes.carddetails}>
-                <Typography variant='h4'>
-                    Subtotal: {cart.subtotal.formatted_with_symbol}
-                </Typography>
-                <div>
-
-                        <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary' onClick={() => { setCheckout(true) }}>Checkout</Button>
-                    
-                    <Button className={classes.emptyButton} size='large' type='button' variant='contained' color='secondary' onClick={handleEmptyCart}>Empty Cart</Button>
-
-                </div>
-            </div> */}
         </>
     );
     if (!cart.line_items) return 'Loading...';
 
     return (
         <Container>
-            <div className={classes.toolbar} />
-            <Typography className={classes.title} variant='h5' gutterBottom style={{'textAlign': 'center'}}>You have <span style={{'fontSize':'14px'}}>{totalItems} item(s)</span> in your cart</Typography>
+            <div className={classes.toolbar} style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center' }} />
+            <Typography className={classes.title} variant='h5' gutterBottom style={{ 'textAlign': 'center' }}>You have <span style={{ 'fontSize': '14px' }}>{totalItems} item(s)</span> in your cart</Typography>
             {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
         </Container>
     );
