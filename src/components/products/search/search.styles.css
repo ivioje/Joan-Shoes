@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap');
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    flex-flow: column wrap;
+}
+.search-wrapper input {
+    padding: .6rem;
+    margin: 10px;
+}
+ h6 {
+    margin: 10px;
+    padding: 1rem;
+    font-family: 'BhuTuka Expanded One', cursive;
+    font-size: 20px;
+    color: #000;
+}
