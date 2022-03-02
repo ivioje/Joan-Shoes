@@ -12,27 +12,30 @@ const Products = ({ products, onAddToCart }) => {
     if (products.length === 0) return <Spinner />;
 
     const onSearchChange = (e) => {
-        setQuery({query: e.target.value})
-        
+        setQuery(e.target.value)
     };
 
-    const filteredProducts = products.filter(products => {
-        return products.name.toLowerCase().includes(query.toString().toLowerCase());
-    });
-
-    
     return (
-        
+
         <main className={classes.content}>
             <div className={classes.toolbar}>
                 <Search products={products} searchChange={onSearchChange} />
                 <Grid container justifyContent='center' spacing={4}>
-                    {filteredProducts.map((product) => (
+                    {products.filter(product => {
+                        if (query === '') {
+                            return product;
+                        } else if (product.name.toLowerCase().includes(query.toLowerCase())) {
+                            return product;
+                        } 
+                        return false;
+                    }).map((product) => (
                         <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
                             <Product product={product} onAddToCart={onAddToCart} />
                         </Grid>
-                    ))}
-                    {console.log(products)}
+                    ))
+
+                    }
+
                 </Grid>
             </div>
         </main>

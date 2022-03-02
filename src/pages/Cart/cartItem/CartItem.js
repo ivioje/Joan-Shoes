@@ -25,13 +25,13 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
                     {item.name}
                 </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions style={{'textAlign':'center', 'width':'100%'}}>
                 <button className='updateBtn' onClick={() => onUpdateCartQty(item.id, item.quantity - 1)}>-</button>
                 <h6 className='qty'>{item.quantity}</h6>
                 <button className='updateBtn' onClick={() => onUpdateCartQty(item.id, item.quantity + 1)}>+</button>
                 <Delete onClick={() => onRemoveFromCart(item.id)} className='delete-item' />
             </CardActions>
-            <h6 style={{ 'float': 'right' }}>{item.price.formatted_with_symbol}</h6>
+            <h6 style={{ 'float': 'right', 'textAlign': 'center', 'width':'100%' }}>{item.price.formatted_with_symbol}</h6>
 
         </Card>
 

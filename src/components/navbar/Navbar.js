@@ -7,7 +7,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 const NavMenu = ({ totalItems }) => {
 
   return (
-    <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark" className='navbar_main'>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='navbar_main'>
       <Container>
         <Navbar.Brand href="/" title='Home' className='brand'>Joan Shoes</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className='burger' />
