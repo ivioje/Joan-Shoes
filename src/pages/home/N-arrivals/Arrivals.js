@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './style.css';
 import { commerce } from '../../../lib/commerce.js';
 import { Grid } from '@material-ui/core';
-import { Skeleton } from '@mui/material';
-
+import Spinner from '../../../components/loader/Spinner'
 const Arrivals = (props) => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState({});
@@ -25,7 +24,10 @@ const Arrivals = (props) => {
         fetchProducts();
     }, []);
 
-    const { loading = false } = props;
+    // const { loading = false } = props;
+
+    if (products.length === 0) return <Spinner />;
+
 
     const Products = () => {
         return (
@@ -73,10 +75,7 @@ const Arrivals = (props) => {
             </h3>
             <p className='link-shop'> <a href='/shop'>See more products
                 &#10142;</a></p>
-                {
-                    loading ?
-                    <Skeleton variant="rectangular" width={210} height={118} /> : <Products />
-                }
+            <Products />
         </div>
     )
 }

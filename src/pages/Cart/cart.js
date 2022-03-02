@@ -3,7 +3,8 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 import useStyles from './styles';
 import CartItem from './cartItem/CartItem';
 import { Link } from 'react-router-dom';
-import './cart.styles.css'
+import './cart.styles.css';
+import Spinner from '../../components/loader/Spinner.js'
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, totalItems }) => {
     const classes = useStyles();
@@ -33,7 +34,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             </div>
         </>
     );
-    if (!cart.line_items) return 'Loading...';
+    if (!cart.line_items) return <Spinner /> ;
 
     return (
         <Container>

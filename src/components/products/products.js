@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import Product from './Product/product';
 import useStyles from './styles';
+import Spinner from '../loader/Spinner'
+import Search from './search/Search';
 
 const Products = ({ products, onAddToCart }) => {
-    const classes = useStyles();
+    const [query, setQuery] = useState('');
 
-    return ( 
+    const classes = useStyles();
+    if (products.length === 0) return <Spinner />;
+
+    const onSearchChange = (e) => {
+        setQuery({query: e.target.value})
+        
+    };
+
+    const filteredProducts = products.filter(products => {
+        return products.name.toLowerCase().includes(query.toString().toLowerCase());
+    });
+
+    
+    return (
+        
         <main className={classes.content}>
             <div className={classes.toolbar}>
-            <Grid container justifyContent='center' spacing={4}>
-                {products.map((product) => (
-                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-<Product product={product} onAddToCart={onAddToCart}/>
+                <Search products={products} searchChange={onSearchChange} />
+                <Grid container justifyContent='center' spacing={4}>
+                    {filteredProducts.map((product) => (
+                        <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+                            <Product product={product} onAddToCart={onAddToCart} />
                         </Grid>
-                ))}
-            </Grid>
+                    ))}
+                    {console.log(products)}
+                </Grid>
             </div>
         </main>
-     );
+    );
 }
- 
+
 export default Products;
