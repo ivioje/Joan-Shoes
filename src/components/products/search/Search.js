@@ -7,7 +7,7 @@ const Search = ({ searchChange }) => {
     return (
         <div className="search-wrapper">
             <label htmlFor='search'>
-               <h6> Search our collection</h6>
+               <h6 className='title'> Search our collection</h6>
                 <input
                     type='search'
                     placeholder='e.g. sneakers, loafers'

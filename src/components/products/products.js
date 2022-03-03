@@ -7,13 +7,14 @@ import Search from './search/Search';
 
 const Products = ({ products, onAddToCart }) => {
     const [query, setQuery] = useState('');
-
     const classes = useStyles();
+
     if (products.length === 0) return <Spinner />;
 
     const onSearchChange = (e) => {
         setQuery(e.target.value)
     };
+
 
     return (
 

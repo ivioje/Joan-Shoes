@@ -61,7 +61,7 @@ const App = () => {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/shop' >
-                        <Products products={products} onAddToCart={handleAddToCart} />
+                        <Products products={products} onAddToCart={handleAddToCart} setProducts={setProducts} />
                     </Route>
                     <Route exact path='/cart'>
                         <Cart

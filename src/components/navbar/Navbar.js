@@ -14,8 +14,8 @@ const NavMenu = ({ totalItems }) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/shop" title='shop'>Shop</Nav.Link>
-            <Nav.Link href="/about" title='About Joan Shoes'>About Us</Nav.Link>
-            <Nav.Link href="/about" title='About Joan Shoes'>Bulk Order</Nav.Link>
+            <Nav.Link href="/" title='About Joan Shoes'>About Us</Nav.Link>
+            <Nav.Link href="/" title='Bulk order'>Bulk Order</Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="/cart" title='Your cart' className='cart'><ShoppingCart /><div>{totalItems}</div></Nav.Link>
