@@ -10,7 +10,7 @@
 <hr />
 <h2>Features</h2>
 <ul>
-  <li>Fetching and displaying new arrivals on home page</li>
+  <li>Fetching and displaying products</li>
   <li>Adding products to cart</li>
   <li>Search bar to filter products</li>
   <li>Increment and decrement products in cart</li>
