@@ -29,6 +29,33 @@
 
 <hr />
 
+<h2>Installation Steps</h2>
+1. Clone the repository
+
+ ```
+ git clone https://github.com/ivioje/Joan-Shoes.git
+ ```
+ 
+ 2. Change the working directory
+ 
+ ```
+ cd Joan-Shoes
+ ```
+ 
+ 3. Install dependencies
+ 
+ ```
+ npm instal
+ ```
+ 
+ 4. Start development server
+ 
+ ```
+ npm start
+ ```
+ 
+ <hr />
+
 <h2>Built with</h2>
 
   [CSS](https://www.w3.org/Style/CSS/Overview.en.html) <br />
