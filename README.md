@@ -59,6 +59,7 @@
 <h2>Built with</h2>
 
   [CSS](https://www.w3.org/Style/CSS/Overview.en.html) <br />
+  [React Bootstrap](https://react-bootstrap.github.io/) <br />
   [React](https://reactjs.org/) <br />
   [Commercejs](https://commercejs.com/) <br />
   
