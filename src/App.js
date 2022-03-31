@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Cart from './pages/Cart/cart.js';
+import Cart from './pages/Cart/Cart.js';
 import Products from './components/products/products.js';
 import Checkout from './pages/checkoutForm/checkout/Checkout.js';
 import Home from './pages/home/Home.js';
@@ -11,7 +11,9 @@ import Footer from './components/footer/Footer';
 const App = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState({});
+    const [checkout, setCheckout] = useState(false);
     
+    //fetch all the products from the commerce.js api
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
         
@@ -34,7 +36,6 @@ const App = () => {
         setCart(response.cart);
     };
     
-    
     const handleRemoveFromCart = async (lineItemId) => {
         const response = await commerce.cart.remove(lineItemId);
         
@@ -55,11 +56,13 @@ const App = () => {
 
     return (
         <>
-            {/* <Products /> */}
             <Router>
                 <NavMenu totalItems={cart.total_items} />
                 <Switch>
-                    <Route exact path='/' component={Home} />
+                    <Route exact path='/' >
+                        <Home products={products} />
+
+                    </Route>
                     <Route exact path='/shop' >
                         <Products products={products} onAddToCart={handleAddToCart} setProducts={setProducts} />
                     </Route>
@@ -70,6 +73,7 @@ const App = () => {
                             handleRemoveFromCart={handleRemoveFromCart}
                             handleEmptyCart={handleEmptyCart}
                             totalItems={cart.total_items}
+                            setCheckout={setCheckout}
                         />
                     </Route>
                     <Route exact path='/checkout' >

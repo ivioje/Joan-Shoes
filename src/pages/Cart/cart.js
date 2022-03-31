@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Typography, Button, Grid } from '@material-ui/core';
 import useStyles from './styles';
 import CartItem from './cartItem/CartItem';
@@ -6,10 +6,13 @@ import { Link } from 'react-router-dom';
 import './cart.styles.css';
 import Spinner from '../../components/loader/Spinner.js'
 
-const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart, totalItems }) => {
+const Cart = ({ setCheckout,
+    cart, handleUpdateCartQty,
+    handleRemoveFromCart,
+    handleEmptyCart,
+    totalItems }) => {
+
     const classes = useStyles();
-    const [checkout, setCheckout] = useState(false);
-    console.log(checkout);
 
     const EmptyCart = () => (
         <Typography variant='subtitle1' style={{ 'textAlign': 'center' }}>
@@ -34,7 +37,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             </div>
         </>
     );
-    if (!cart.line_items) return <Spinner /> ;
+    if (!cart.line_items) return <Spinner />;
 
     return (
         <Container>

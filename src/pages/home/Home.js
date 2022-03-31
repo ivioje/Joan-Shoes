@@ -5,7 +5,7 @@ import Categories from './categories/Categories';
 import Arrivals from './N-arrivals/Arrivals';
 import Xplore from './xplore/Xplore';
 
-const Home = () => {
+const Home = ({ products }) => {
     return (
         <>
             <Carousel />
@@ -15,7 +15,7 @@ const Home = () => {
                     &#10142;</a></p>
             </div>
             <Categories />
-            <Arrivals />
+            <Arrivals products={products} />
             <Xplore />
         </>
     )

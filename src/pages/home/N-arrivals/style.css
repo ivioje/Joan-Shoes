@@ -65,6 +65,11 @@ margin: 1.2rem 0rem;
     opacity: 1 !important;
     color: rgb(12, 12, 12);
 }
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media screen and (max-width: 500px) {
 .card {
